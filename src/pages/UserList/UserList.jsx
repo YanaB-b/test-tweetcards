@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
-import UserCard from "./components/userCard/UserCard";
-import fetchUsers from './components/fetchApi/fetchApi';
+import UserCard from "../../components/userCard/UserCard";
+import {fetchUsers} from '../../fetchApi/fetchApi';
 import { useEffect, useState } from "react";
 
 

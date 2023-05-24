@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
 import css from "./UserCard.module.css";
-import boyImg from "../../images/boy.png";
-import logoImg from "../../images/logo.png";
-import topImg from "../../images/topPicture.png";
+// import boyImg from "../../images/boy.png";
+// import logoImg from "../../images/logo.png";
+// import topImg from "../../images/topPicture.png";
 const UserCard = ({ tweets, followers, avatar, id }) => {
   const [isFollowing, setIsFollowing] = useState(false);
   const [followersCount, setFollowersCount] = useState(parseInt(followers));
@@ -36,10 +36,10 @@ const UserCard = ({ tweets, followers, avatar, id }) => {
   return (
     <>
       <li className={css.userCard}>
-        <img className={css.logoImg} src={logoImg} alt="logo image" />
+        {/* <img className={css.logoImg} src={logoImg} alt="logo image" />
         <img className={css.topImg} src={topImg} alt="top image" />
         <img className={css.userAvatar} src={avatar} alt="User Avatar" />
-        <img className={css.boyImg} src={boyImg} alt="boy image" />
+        <img className={css.boyImg} src={boyImg} alt="boy image" /> */}
         <div className={css.avatarLine}></div>
         <p className={css.userTextTweets}>{tweets} Tweets</p>
         <p className={css.userTextFollowers}>{followersCount} Followers</p>

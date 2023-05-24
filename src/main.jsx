@@ -7,8 +7,8 @@ import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <HashRouter basename="/test-tweetcards">
+    <BrowserRouter basename="/test-tweetcards">
       <App />
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>
 );
