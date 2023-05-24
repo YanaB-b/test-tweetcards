@@ -4,5 +4,8 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/test-tweetcards/"
+  base: "/test-tweetcards/",
+  server: {
+    open: "/test-tweetcards/",
+  },
 })
