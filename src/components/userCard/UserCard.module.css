@@ -1,4 +1,4 @@
-/* .userCard {
+.userCard {
     display: block;
     width: 380px;
     height: 460px;
@@ -12,16 +12,8 @@
     border-radius: 20px;
     position: relative;
   }
-  .userAvatar {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    left: 160px;
-    top: 185px;
-    z-index: 2;
-    border-radius: 85.9232px;
-  }
-  .userTextFollowers {
+
+  .textFollowers {
     position: absolute;
     margin-top: 324px;
     left: 50%;
@@ -35,7 +27,7 @@
     color: #ebd8ff;
     text-align: center;
   }
-  .userTextTweets {
+  .textTweets {
     position: absolute;
     margin-top: 284px;
     left: 50%;
@@ -50,39 +42,39 @@
     text-align: center;
   }
   
-  .userName {
-    margin: 0;
-  }
-  .defaultButton {
+
+  .btn {
     position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 14px 28px;
-    gap: 6px;
-    width: 196px;
-    height: 50px;
-    background: #ebd8ff;
-    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
-    border-radius: 10.3108px;
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
-    text-transform: uppercase;
-    color: #373737;
-    margin-top: 374px;
-    margin-left: 92px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 28px;
+  gap: 6px;
+  width: 196px;
+  height: 50px;
+  background: #ebd8ff;
+  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+  border-radius: 10.3108px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: #373737;
+  margin-top: 374px;
+  margin-left: 92px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
   }
-  .defaultButton:hover,
-  .defaultButton:focus {
-    background-color: #999;
+  .btn:hover,
+  .btn:focus {
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+    background-color: #d8c3ff;
   }
-  .clickedButton {
+  .followingBtn {
+
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -105,37 +97,45 @@
     margin-top: 374px;
     margin-left: 92px;
     cursor: pointer;
+    
   }
-  
-  .avatarLine {
+  .straightImg {
     position: absolute;
     width: 380px;
     height: 8px;
-    background: #ebd8ff;
-    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
-      inset 0px -1.71846px 3.43693px #ae7be3, inset 0px 3.43693px 2.5777px #fbf8ff;
     margin-top: 210px;
   }
-  
-  .topImg {
-    position: absolute;
-    width: 308px;
-    height: 168px;
-    margin-top: 28px;
-    margin-left: 36px;
-  }
-  .logoImg {
-    position: absolute;
-    margin-top: 20px;
-    margin-left: 20px;
-  }
-  
-  .boyImg {
-    position: absolute;
-    width: 82px;
-    height: 82px;
-    left: 150px;
-    top: 178px;
-    border-radius: 85.9232px;
-    z-index: 1;
-  } */
+.bgrimages{
+   position: absolute;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.imgAvatar {
+  position: absolute;
+  width: 68px;
+  height: 67px;
+  left: 171px;
+  top: 186px;
+  z-index: 2;
+  border-radius: 85.9232px;
+}
+
+.ellipseImg{
+  position: absolute;
+  width: 92px;
+  height: 92px;
+  left: 160px;
+  top: 178px;
+  border-radius: 85px;
+  z-index: 1;
+}
+
+.users{
+  position: absolute;
+  width: 82px;
+  height: 82px;
+  left: 165px;
+  top: 178px;
+  border-radius: 85px;
+
+}

@@ -1,15 +1,21 @@
+import GoITImg from '../../assets/GoITImg.png'
+
+import straight from '../../assets/straight.png'
+import bgrimages from '../../assets/bgrimages.png';
+import css from '../../components/userCard/userCard.module.css';
+import DefaultImage from '../../assets/DefaultImage.png'
+import Ellipse from '../../assets/Ellipse.png'
+
 import { useState, useEffect } from "react";
+
 import { Outlet } from "react-router-dom";
 
-import css from "./UserCard.module.css";
-// import boyImg from "../../images/boy.png";
-// import logoImg from "../../images/logo.png";
-// import topImg from "../../images/topPicture.png";
-const UserCard = ({ tweets, followers, avatar, id }) => {
+
+const UserCard = ({ tweets, followers, id, avatar }) => {
   const [isFollowing, setIsFollowing] = useState(false);
   const [followersCount, setFollowersCount] = useState(parseInt(followers));
 
-  const handleFollowClick = () => {
+  const handleClickChangeFollow = () => {
     if (isFollowing) {
       setFollowersCount((prevFollowersCount) => prevFollowersCount - 1);
     } else {
@@ -18,32 +24,32 @@ const UserCard = ({ tweets, followers, avatar, id }) => {
     setIsFollowing((prevIsFollowing) => !prevIsFollowing);
   };
   useEffect(() => {
-    const savedIsFollowing = localStorage.getItem(`isFollowing_${id}`);
-    const savedFollowersCount = localStorage.getItem(`followers_${id}`);
-    if (savedIsFollowing) {
-      setIsFollowing(savedIsFollowing === "true");
+
+    if (localStorage.getItem(`isFollowing_${id}`)) {
+      setIsFollowing(localStorage.getItem(`isFollowing_${id}`) === "true");
     }
-    if (savedFollowersCount) {
-      setFollowersCount(parseInt(savedFollowersCount));
+    if (localStorage.getItem(`followers_${id}`)) {
+      setFollowersCount(parseInt(localStorage.getItem(`followers_${id}`)));
     }
   }, [id]);
   useEffect(() => {
     localStorage.setItem(`isFollowing_${id}`, String(isFollowing));
     localStorage.setItem(`followers_${id}`, String(followersCount));
   }, [isFollowing, id, followersCount]);
-
-  const btnClass = isFollowing ? css.clickedButton : css.defaultButton;
   return (
     <>
       <li className={css.userCard}>
-        {/* <img className={css.logoImg} src={logoImg} alt="logo image" />
-        <img className={css.topImg} src={topImg} alt="top image" />
-        <img className={css.userAvatar} src={avatar} alt="User Avatar" />
-        <img className={css.boyImg} src={boyImg} alt="boy image" /> */}
-        <div className={css.avatarLine}></div>
-        <p className={css.userTextTweets}>{tweets} Tweets</p>
-        <p className={css.userTextFollowers}>{followersCount} Followers</p>
-        <button className={btnClass} onClick={handleFollowClick}>
+        <img className={css.straightImg} src={straight} alt="straight" />
+        <img className={css.bgrimages} src={GoITImg} alt="GoITImg image" />
+        <img className={css.bgrimages} src={bgrimages} alt="bgrimages image" />
+        <img className={css.imgAvatar} src={avatar} alt="User Avatar" />
+        <img className={css.ellipseImg} src={Ellipse} alt="Ellipse" />
+        <img className={css.users}  src={tweets.avatar ? tweets.avatar : DefaultImage}
+        alt="users image" />
+
+        <h3 className={css.textTweets}>{tweets} tweets</h3>
+        <h3 className={css.textFollowers}>{followersCount} followers</h3>
+        <button className={isFollowing ? css.followingBtn : css.btn} onClick={handleClickChangeFollow}>
           {isFollowing ? "Following" : "Follow"}
         </button>
         <Outlet />

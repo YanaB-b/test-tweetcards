@@ -1,0 +1,59 @@
+.usersTweets {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 60px;
+}
+.btnGoBack {
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #471ca9;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  width: 150px;
+}
+.btnGoBack:hover,
+.btnGoBack:focus {
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+}
+.btnLoadMore {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 6px;
+  width: 196px;
+  outline: none;
+  background: #471ca9;
+  color: #ffffff;
+  border-radius: 10px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 20px auto;
+  cursor: pointer;
+}
+.btnLoadMore:hover,
+.btnLoadMore:focus {
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+}

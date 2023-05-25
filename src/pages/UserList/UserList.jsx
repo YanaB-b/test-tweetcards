@@ -3,58 +3,56 @@ import { Link } from "react-router-dom";
 import UserCard from "../../components/userCard/UserCard";
 import {fetchUsers} from '../../fetchApi/fetchApi';
 import { useEffect, useState } from "react";
-
+import css from '../UserList/UserList.module.css'
 
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
   const [visibleUsers, setVisibleUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const usersPerPage = 3;
-  const totalPages = Math.ceil(users.length / usersPerPage);
-
+  
   useEffect(() => {
     fetchUsers()
       .then((data) => {
         setUsers(data);
-        setVisibleUsers(data.slice(0, usersPerPage));
+        setVisibleUsers(data.slice(0, 3));
       })
       .catch((error) => console.error("Error", error));
   }, []);
 
   const loadMore = () => {
-    const nextPage = currentPage + 1;
-    const startIndex = (nextPage - 1) * usersPerPage;
-    const endIndex = startIndex + usersPerPage;
-    const newVisibleUsers = users.slice(startIndex, endIndex);
+    
+    const startPages = ((currentPage + 1) - 1) * 3;
+    const endPages = startPages + 3;
+    const newVisibleUsers = users.slice(startPages, endPages);
     setVisibleUsers((prevVisibleUsers) => [
       ...prevVisibleUsers,
       ...newVisibleUsers,
     ]);
-    setCurrentPage(nextPage);
+    setCurrentPage(currentPage + 1);
   };
   return (
     <div>
-      <Link to={"/"}>
-        Go Home
+      <Link to={"/"} className={css.btnGoBack}>
+      🢨 Go back
       </Link>
-      <ul>
+      <ul className ={css.usersTweets}>
         {visibleUsers.map(({ id, user, tweets, followers, avatar }) => (
           <UserCard
+          tweets={tweets}
+            followers={followers}
+            avatar={avatar}
             key={id}
             id={id}
             user={user}
-            tweets={tweets}
-            followers={followers}
-            avatar={avatar}
+            
           />
         ))}
       </ul>
-      {currentPage < totalPages && (
-        <button onClick={loadMore}>
+        <button className ={css.btnLoadMore} onClick={loadMore}>
           Load More
         </button>
-      )}
+      
     </div>
   );
 };
