@@ -2,7 +2,7 @@ import GoITImg from '../../assets/GoITImg.png'
 
 import straight from '../../assets/straight.png'
 import bgrimages from '../../assets/bgrimages.png';
-import css from '../userCard/userCard.module.css';
+import css from '../../components/userCard/UserCard.module.css';
 import DefaultImage from '../../assets/DefaultImage.png'
 import Ellipse from '../../assets/Ellipse.png'
 
